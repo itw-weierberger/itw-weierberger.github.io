@@ -30,6 +30,7 @@ $(function() {
           email: email,
           message: message
         },
+        dataType: "json", // newly added
         cache: false,
         success: function() {
           // Success message
