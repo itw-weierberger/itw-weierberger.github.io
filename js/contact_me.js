@@ -20,7 +20,7 @@ $(function() {
       $this = $("#sendMessageButton");
       $this.prop("disabled", true); // Disable submit button until AJAX call is complete to prevent duplicate messages
       $.ajax({
-        //url: "../mail/contact_me.php",
+        //url: "../mail/contact_me.php", // php not supported on Github Pages (???)
         url: "https://formspree.io/itw-weierberger@web.de",
         method: "POST", // newly added
         type: "POST",
@@ -30,7 +30,7 @@ $(function() {
           email: email,
           message: message
         },
-        //dataType: "json", // newly added
+        dataType: "json", // newly added
         cache: false,
         success: function() {
           // Success message
@@ -38,7 +38,7 @@ $(function() {
           $('#success > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
             .append("</button>");
           $('#success > .alert-success')
-            .append("<strong>Your message has been sent, 1119. </strong>");
+            .append("<strong>Your message has been sent, 1120. </strong>");
           $('#success > .alert-success')
             .append('</div>');
           //clear all fields
@@ -49,7 +49,7 @@ $(function() {
           $('#success').html("<div class='alert alert-danger'>");
           $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
             .append("</button>");
-          $('#success > .alert-danger').append($("<strong>").text("Sorry " + firstName + ", it seems that my mail server is not responding. Please try again later, 1119!"));
+          $('#success > .alert-danger').append($("<strong>").text("Sorry " + firstName + ", it seems that my mail server is not responding. Please try again later, 1120!"));
           $('#success > .alert-danger').append('</div>');
           //clear all fields
           $('#contactForm').trigger("reset");
